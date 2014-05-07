@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A DrawerLayout is intended to be used as the top-level content view using match_parent for both width and height to consume the full space available. -->
+<android.support.v4.widget.DrawerLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/drawer_layout"
+        android:background="#404040"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.collosteam.colloscirclereitingbar.MainActivity">
+
+    <!-- As the main content view, the view below consumes the entire
+         space available using match_parent in both dimensions. -->
+    <LinearLayout android:orientation="vertical"
+                  android:layout_width="fill_parent"
+                  android:layout_height="fill_parent">
+    <LinearLayout android:orientation="horizontal"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content" android:layout_gravity="center">
+        <com.collosteam.ViewCircleLoaderWithAnimation.CircleLoaderView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id="@+id/circleLoaader"
+                android:layout_gravity="center"/>
+
+        <com.collosteam.ViewCircleLoaderWithAnimation.CircleLoaderView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id="@+id/circleLoaader2"
+                android:layout_gravity="center"/>
+        <com.collosteam.ViewCircleLoaderWithAnimation.CircleLoaderView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id="@+id/circleLoaader3"
+                android:layout_gravity="center"/>
+                  </LinearLayout>
+
+
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@android:dimen/app_icon_size"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:text="0%"
+                android:id="@+id/textViewPersent"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/stroke_width"
+                android:id="@+id/textViewStart"/>
+        <SeekBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/seekBarStart"
+                android:max="50"
+                android:progress="0"
+                android:indeterminate="false"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/end_angle"
+                android:id="@+id/textViewEnd"/>
+        <SeekBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/seekBarEnd"
+                android:max="360"
+                android:progress="0"
+                android:indeterminate="false"/>
+        <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" android:orientation="horizontal" android:id="@id/use_animation">
+            <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Use Animation"
+                    android:id="@+id/checkBox"
+                    android:layout_gravity="center_vertical"
+                    android:checked="false" android:visibility="gone"/>
+            <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Start"
+                    android:id="@+id/buttonStartAnimation"
+                    android:layout_gravity="center_vertical"
+                    />
+            <Switch
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/switch1" android:checked="true" android:layout_gravity="center"
+                    android:textOn="Pos" android:textOff="Neg"/>
+        </LinearLayout>
+
+    </LinearLayout>
+    <!-- android:layout_gravity="start" tells DrawerLayout to treat
+         this as a sliding drawer on the left side for left-to-right
+         languages and on the right side for right-to-left languages.
+         If you're not building against API 17 or higher, use
+         android:layout_gravity="left" instead. -->
+    <!-- The drawer is given a fixed width in dp and extends the full height of
+         the container. -->
+    <fragment android:id="@+id/navigation_drawer"
+              android:layout_width="@dimen/navigation_drawer_width"
+              android:layout_height="match_parent"
+              android:layout_gravity="left"
+              android:name="com.collosteam.ViewCircleLoaderWithAnimation.NavigationDrawerFragment"
+              tools:layout="@layout/fragment_navigation_drawer"/>
+
+</android.support.v4.widget.DrawerLayout>
+
+

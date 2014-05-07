@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ViewCircleLoaderWithAnimation</string>
+    <string name="start_angle">Start Angle</string>
+    <string name="hello_world_text">Hello World, TestActivity</string>
+    <string name="end_angle">End Angle</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="stroke_width">Stroke Width</string>
+
+</resources>
